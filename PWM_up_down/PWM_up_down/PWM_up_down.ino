@@ -9,11 +9,11 @@ void loop() {
     val += 5 * sens;
     if (val >= 255) {
       val = 255;
-      sens = sens * -1;
+      sens =  -1;
     }
     if (val < 0) {
       val = 0;
-      sens = sens * -1;
+      sens = 1;
     }
     analogWrite(11, val);
     delay(50);
