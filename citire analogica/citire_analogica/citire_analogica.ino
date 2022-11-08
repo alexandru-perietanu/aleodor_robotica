@@ -1,10 +1,18 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial Bluetooth(7,8);
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
+  Bluetooth.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  int val = analogRead(A0);
-  Serial.println(val);
+  while (Serial.available()) {
+      delay(1);
+      Bluetooth.write(Serial.read());
+  }
+  while (Bluetooth.available()) {
+       Serial.write(Bluetooth.read());
+  }
 }
