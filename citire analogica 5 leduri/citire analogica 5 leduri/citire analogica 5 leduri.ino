@@ -5,7 +5,6 @@ int state10 = LOW;
 int state11 = LOW;
 int state12 = LOW;
 
-
 void setup() {
   pinMode(8, OUTPUT);
   pinMode(9, OUTPUT);

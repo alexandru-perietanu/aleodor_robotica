@@ -1,6 +1,5 @@
 int val = 0;
 int pins[] = { 5, 6, 9, 10, 11 };
-
 void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
@@ -9,14 +8,10 @@ void setup() {
   pinMode(11, OUTPUT);
   Serial.begin(9600);
 }
-
 void loop() {
   val = analogRead(A0);
-
   int newVal = map(val, 0, 1023, 0, 1275);
-  //Serial.println(val);
   Serial.println(newVal);
-
   int smallVal = newVal / 255;
   Serial.println(smallVal);
   int i;
